@@ -21,9 +21,9 @@
 			var countTimes = document.getElementById('countTimes').value;
 			var countBy = document.getElementById('countBy').value;
 			var i;
-			var countTotal;
+			var countTotal = 0;
 			for(i = 0; i < countTimes; i++){
-				countTotal = (0 + countTotal + countBy);
+				countTotal = (countTotal + countBy);
 			}
 		     document.getElementById("countTotal").innerHTML = countTotal;
 		}
