@@ -18,11 +18,15 @@
 		
 	<script>
 	function createCar(){
+		var year = document.getElementById("carYear").value,
+		var brand = document.getElementById("carBrand").value,
+		var model = document.getElementById("carModel").value,
+		var color = document.getElementById("carColor").value
 		var car = {
-			year : document.getElementById("carYear").value,
-			brand : document.getElementById("carBrand").value,
-			model : document.getElementById("carModel").value,
-			color : document.getElementById("carColor").value
+			year : year,
+			brand : brand,
+			model : model,
+			color : color
 		};
 		document.getElementById("carStatus").innerHTML = car.year + " " + car.brand + " " + car.model + " " + car.color;
 	}
