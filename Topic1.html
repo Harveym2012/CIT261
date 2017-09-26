@@ -13,7 +13,8 @@
 		<p> Total: <p id="countTotal">0</p></p>
  		<p> <button onClick="loop()">Count</button></p>
  		</br>
-		<p> IF total came to over 100, show true: </p>
+		<p> Is the total counted over 50?<button onClick="over50()">True/False</button></p>
+		<p id="condition">Click the button!</p>
   		</br>
 	<p> Choose favorite color by number: [0] = Red, [1] = Blue, [2] = Yellow, [3] = Green. </p>
 	<script>
@@ -26,6 +27,22 @@
 				countTotal = ((countTotal*1) + (countBy*1));
 			}
 		     document.getElementById("countTotal").innerHTML = countTotal;
+		}
+		
+		function over50(){
+			var count = document.getElementById('countTotal').value;
+			if(count > 50){
+				document.getElementById("condition").innerHTML = "True";
+			}
+			if(count < 50){
+				document.getElementById("condition").innerHTML = "False";
+			}
+			if(count == 50){
+				document.getElementById("condition").innerHTML = "Exactly 50!";
+			}
+			if(count == 0){
+				document.getElementById("condition").innerHTML = "You didn't count yet!";
+			}
 		}
 	</script>
 	</body>
