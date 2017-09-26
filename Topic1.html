@@ -31,6 +31,7 @@
 		
 		function over50(){
 			var count = document.getElementById('countTotal').value;
+			count = (count * 1);
 			if(count > 50){
 				document.getElementById("condition").innerHTML = "True!";
 			}
