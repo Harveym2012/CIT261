@@ -8,9 +8,54 @@
 	</head>
 	<body>
   <h1>JSON Parse, Stringify</h1>
-		
-	<script>
+		<p>Given this array:</p>
+		<p>{ </p>
+		<p> "Students":{</p>
+		<p> 	"Peter Parker":{ </p>
+		<p>		"Name": "Peter Parker",</p>
+		<p>		"GPA": 4.0,</p>
+		<p>		"ID": 4456"</p>
+		<p>	}</p>
+		<p> 	"Harry Osborne":{ </p>
+		<p>		"Name": "Harry Osborne",</p>
+		<p>		"GPA": 2.3,</p>
+		<p>		"ID": 6271"</p>
+		<p>	}</p>
+		<p> 	"Mary Jane Watson":{ </p>
+		<p>		"Name": "Mary Jane Watson",</p>
+		<p>		"GPA": 4.0,</p>
+		<p>		"ID": 4456"</p>
+		<p>	}</p>
+		<p>}>/p>
+		</br>
+		<p>We will receive the following string after conversion."</p>
+		<button onClick="convert">Convert</button>
+	<p id="jsonString">Conversion Will Appear Here.</p>
 	
+	<script>
+	function convert() {
+		var array = { 
+			"Students":{ 
+				"Peter Parker":{ 
+					"Name": "Peter Parker",
+					"GPA": 4.0,
+					"ID: 4456
+				}
+				"Harry Osborne":{ 
+					"Name": "Harry Osborne",
+					"GPA": 2.3,
+					"ID": 6271
+				}
+				"Mary Jane Watson":{ 
+					"Name": "Mary Jane Watson",
+					"GPA": 4.0,
+					"ID": 4456
+				}
+			}
+		};
+		var json = JSON.stringify(array);
+		document.getElementById("jsonString").innerHTML = json;
+	}
 	</script>
 	</body>
 </html>
