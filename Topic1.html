@@ -16,7 +16,9 @@
 		<p> Is the total counted over 50?<button onClick="over50()">True/False</button></p>
 		<p id="condition"></p>
   		</br>
-	<p> Choose favorite color by number: [0] = Red, [1] = Blue, [2] = Yellow, [3] = Green. </p>
+	<p> Color Array - [0] = Red, [1] = Blue, [2] = Yellow, [3] = Green. </p>
+	<p>Choose favorite color by number: <input type="text" id="colorNumber"></p>
+	<p> Result: <p id="color"></p> <button onClick="colorPick()">Click Here</button></p>
 	<script>
 		function loop(){
 			var countTimes = document.getElementById('countTimes').value;
@@ -45,6 +47,13 @@
 			if(count == 0){
 				document.getElementById("condition").innerHTML = "You didn't count yet!";
 			}
+		}
+		
+		function colorPick(){
+			var choice = document.getElementById('colorNumber').value;
+			choice = (choice * 1);
+			var colors = ["Red", "Blue", "Yellow", "Purple"]
+			document.getElementById("color").innerHTML = colors[choice];
 		}
 	</script>
 	</body>
