@@ -7,9 +7,25 @@
 	</head>
 	<body>
   <h1>JavaScript – Object Creation Functions, Properties, Methods, Instantiation</h1>
+		<h4>Car Object</h4>
+		<p>Please enter the information about your car: </p>
+		<p>Year: <input type="text" id="carYear"></p>
+		<p>Brand: <input type="text" id="carBrand"></p>
+		<p>Model: <input type="text" id="carModel"></p>
+		<p>Color: <input type="text" id="carColor"></p>
+		<button onclick"createCar()">Create</button>
+		<p id="carStatus">Car Status</p>
 		
 	<script>
-	
+	function createCar(){
+		var car = {
+			year : document.getElementById("carYear").value,
+			brand : document.getElementById("carBrand").value,
+			model : document.getElementById("carModel").value,
+			color : document.getElementById("carColor").value
+		};
+		document.getElementById("carStatus").innerHTML = car.year + " " + car.brand + " " + car.model + " " + car.color;
+	}
 	</script>
 	</body>
 </html>
