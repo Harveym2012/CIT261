@@ -1,5 +1,6 @@
-function loop(int countBy, int countTimes, int countTotal){
-  for(int i = 0, i < countTimes, i++){
-    countTotal += countBy;
-  }
+function loop(countBy, countTimes){
+     for(int i = 0, i < countTimes, i++){
+       countTotal += countBy;
+     }
+     document.getElementById("countTotal").innerHTML = countTotal;
 }
