@@ -44,12 +44,18 @@ p:hover {
 	<script>
 	function animation(){
 	  var elem = document.getElementById("littleBlock");   
-	  var pos = 0;
+	  var pos = 1;
 	  var id = setInterval(frame, 10);
 	  function frame() {
-	    if (pos == 350) {
+	    if (pos == 0) {
 	      clearInterval(id);
-	    } else {
+	    } 
+	    else if (pos == 350) {
+	      pos--; 
+	      elem.style.top = pos + 'px'; 
+	      elem.style.left = pos + 'px'; 
+	    }
+	    else{
 	      pos++; 
 	      elem.style.top = pos + 'px'; 
 	      elem.style.left = pos + 'px'; 
