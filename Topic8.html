@@ -35,13 +35,16 @@ div {
 	</br>
 	<div> Click the button to animate the background color of the page! </p>
 	<br>
+	<button OnClick="reset()">Reset</button>
 	<button OnClick="animation()">Animate!</button>
 
 
 	<script>
 	function animation(){
-	    document.getElementById("bg").style.webkitAnimationName = "";
 	    document.getElementById("bg").style.webkitAnimationName = "example";
+	}
+	function reset(){
+	    document.getElementById("bg").style.webkitAnimationName = "";
 	}
 	</script>
 	</body>
