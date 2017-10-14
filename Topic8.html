@@ -10,6 +10,18 @@ p {
 p:hover {
     font-size: 200%;
 }
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+}
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
 </style>
 	<head>
 		<title>Topic 8, CSS3 Transitions and Animations and triggering them with JavaScript</title>
@@ -28,8 +40,8 @@ p:hover {
 
 	<script>
 	function animation(){
-		var bg = document.getElementById("bg");
-		bg.style.backgroundColor = "pink";
+	    document.getElementById("bg").style.webkitAnimationName = "";
+	    document.getElementById("bg").style.webkitAnimationName = "example";
 	}
 	</script>
 	</body>
