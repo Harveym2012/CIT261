@@ -16,13 +16,21 @@ p:hover {
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
 	</head>
-	<body>
+	<body id="bg">
   <h1>CSS3 Transitions and Animations and triggering them with JavaScript</h1>
   <h4>Transition: </h4>
 	<p> MouseOver this text to begin a transition to make it easier to see! </p>
+	</br>
+	<div> Click the button to animate the background color of the page! </p>
+	<br>
+	<button OnClick="animate()">Animate!</button>
 
 
 	<script>
+	Function animate(){
+		var bg = document.getElementById.('bg');
+		bg.style.background-color = "pink";
+	}
 	</script>
 	</body>
 </html>
