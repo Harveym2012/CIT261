@@ -51,9 +51,14 @@ p:hover {
 	      clearInterval(id);
 	    } 
 	    else if (pos == 350) {
-	      pos = 1; 
-	      elem.style.top = pos + 'px'; 
-	      elem.style.left = pos + 'px'; 
+	      pos = -349; 
+	      elem.style.bottom = (pos*-1) + 'px'; 
+	      elem.style.left = (pos*-1) + 'px'; 
+	    }
+	    else if (pos < 0) {
+	      pos++;
+	      elem.style.bottom = (pos*-1) + 'px'; 
+	      elem.style.left = (pos*-1) + 'px'; 
 	    }
 	    else{
 	      pos++; 
