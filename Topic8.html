@@ -47,23 +47,28 @@ p:hover {
 	  var pos = 1;
 	  var id = setInterval(frame, 10);
 	  function frame() {
-	    if (pos == 0) {
+	    if (pos == 1400) {
 	      clearInterval(id);
 	    } 
-	    else if (pos == 350) {
-	      pos = -349; 
-	      elem.style.bottom = (pos*-1) + 'px'; 
-	      elem.style.left = (pos*-1) + 'px'; 
-	    }
-	    else if (pos < 0) {
-	      pos++;
-	      elem.style.bottom = (pos*-1) + 'px'; 
-	      elem.style.left = (pos*-1) + 'px'; 
-	    }
-	    else{
+	    else if (pos >= 0 && pos < 350) {
 	      pos++; 
 	      elem.style.top = pos + 'px'; 
 	      elem.style.left = pos + 'px'; 
+	    }
+        else if (pos >= 350 && pos < 700) {
+	      pos++; 
+	      elem.style.bottom = 'px'; 
+	      elem.style.left = (700 - pos) + 'px'; 
+	    }
+        else if (pos >= 700 && pos < 1050) {
+	      pos++; 
+	      elem.style.top = (1050 - pos) + 'px'; 
+	      elem.style.left = (pos - 700) + 'px'; 
+	    }
+	    else if (pos >= 1050){
+	      pos++; 
+	      elem.style.top = 'px'; 
+	      elem.style.left = (1400 - pos) + 'px'; 
 	    }
 	  }
 	}
