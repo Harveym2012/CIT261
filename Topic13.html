@@ -1,6 +1,41 @@
 
 <!DOCTYPE html>
 <html>
+    <style>
+p {
+color: red;
+position: relative;
+animation-name: textimation;
+animation-duration: 10s;
+animation-iteration-count: infinite;
+}
+        
+div {
+width: 40px;
+height: 40px;
+position: relative;
+background-color: black;
+animation-name: moving;
+animation-duration: 2.5s;
+animation-iteration-count: infinite;
+}       
+
+@keyframes textimation {
+    0%   {color:red; font-family: fantasy; left:0px; top:0px;}
+    25%  {color:yellow; font-family: cursive; border:2px; border-color: purple; left:200px; top:0px;}
+    50%  {color:blue; font-family: serif; left:200px; top:200px;}
+    75%  {color:green; font-family: sans-serif; left:0px; top:200px;}
+    100% {color:red; font-family: fantasy; left:0px; top:0px;}
+}
+@keyframes moving {
+    0%   {background-color:blue; font-family: fantasy; left:100px; top:0px;}
+    25%  {background-color:green; font-family: cursive; left:200px; top:100px;}
+    50%  {background-color:red; font-family: serif; left:100px; top:200px;}
+    75%  {background-color:yellow; font-family: sans-serif; left:0px; top:100px;}
+    100% {background-color:blue; font-family: fantasy; left:100px; top:0px;}
+}
+        
+    </style>
 	<head>
 		<title>Topic 13, Designing, Defining, and Triggering CSS3 Animations without Custom Libraries</title>
 		<!-- link to main stylesheet -->
@@ -8,9 +43,10 @@
 	</head>
 	<body>
   <h1>Designing, Defining, and Triggering CSS3 Animations without Custom Libraries</h1>
-		
+        <div> </div>
+		  <p> Here is a paragraph of text. It is animated and constantly changing style. I don't really know what to put here.</p>
+        <div style="width: 60px"></div> <div style="height: 60px"></div>
 	<script>
-	
 	</script>
 	</body>
 </html>
