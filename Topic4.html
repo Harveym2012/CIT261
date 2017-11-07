@@ -8,9 +8,43 @@
 	</head>
 	<body>
   <h1>Using AJAX to Consume a JSON Web Service</h1>
+        <div id="States">
+            <button type="button" onclick="getJson()">Load State Information</button>
+        </div>
+            <table id='stateTable'>
+                <tr>
+                    <th align="left">State: </th>
+                    <th align="left">Capital: </th>
+                </tr>
+            </table>
 		
 	<script>
-	
+    function getJson()
+    {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var states = [];
+                states = JSON.parse(this.response);
+                var counter = 1;
+                console.log(states);
+                for (p in states) 
+                    for(k in states[p]){
+                        var table = document.getElementById('stateTable');
+                        var row = table.insertRow(counter);
+                        var stateCell = row.insertCell(0);
+                        var capCell = row.insertCell(1);
+                        stateCell.innerHTML = k;
+                        capCell.innerHTML = states[p][k];
+                        counter++;
+                    }
+                document.getElementById("States").innerHTML = '';
+            }
+            
+        };
+        xhttp.open("GET", "Topic4Json.json", true);
+        xhttp.send();
+    }
 	</script>
 	</body>
 </html>
