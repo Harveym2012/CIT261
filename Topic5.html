@@ -7,10 +7,54 @@
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
 	</head>
 	<body>
-  <h1>Local Storage Storing and Retrieving Arrays, Associative Arrays, and Objects</h1>
-		
-	<script>
-	
+  	<h1>Local Storage Storing and Retrieving Arrays, Associative Arrays, and Objects</h1>
+        <h3>Pick a car to view its information:</h3>
+        <select id="cars" onChange="change();">
+            <option value="0">- SELECT -</option>
+            <option value="1">Forte</option>
+            <option value="2">Fusion</option>
+            <option value="3">Corolla</option>
+        </select>
+        <div id="display"></div>
+        <div id="displayChange"></div>
+			
+        <script>
+            var forte = {"Name: ":"Forte", "Manufacturer: ":"Kia", "Color: ":"Black", "Year: ":"2016", "Condition: ":"New"};
+            //local storage
+            store1 = JSON.stringify(forte);
+            localStorage.setItem("Forte", store1);
+            
+            var fusion = {"Name: ":"Fusion", "Manufacturer: ":"Ford", "Color: ":"Grey", "Year: ":"2013", "Condition: ":"Good"};
+            //local storage
+            store2 = JSON.stringify(fusion);
+            localStorage.setItem("Fusion", store2);
+            
+            var corolla = {"Name: ":"Corolla", "Manufacturer: ":"Toyota", "Color: ":"Red", "Year: ":"2015", "Condition: ":"Great"};
+            //local storage
+            store3 = JSON.stringify(corolla);
+            localStorage.setItem("Corolla", store3);
+            
+            function change ()
+            {
+                document.getElementById("display").innerHTML = " ";
+                var selected = document.getElementById("cars");
+                var value = selected.options[selected.selectedIndex].value;
+                if (value == "1") {
+                    for (x in forte) {
+                        document.getElementById("display").innerHTML += x + forte[x] +"<br>";
+                    }
+                }
+                if (value == "2") {
+                    for (x in fusion) {
+                        document.getElementById("display").innerHTML += x + fusion[x] +"<br>";
+                    }
+                }
+                if (value == "3") {
+                    for (x in corolla) {
+                        document.getElementById("display").innerHTML += x + corolla[x] +"<br>";
+                    }
+                }
+            }
 	</script>
 	</body>
 </html>
