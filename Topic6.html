@@ -8,9 +8,15 @@
 	</head>
 	<body>
   <h1>DOM Manipulation Using createElement, appendChild, insertBefore etc.</h1>
-		
-	<script>
-	
-	</script>
-	</body>
+        <div>This button will create a line!</div>
+        <button onclick="add()">Click!</button>
+        <script>
+            function add() {
+                var child = document.createElement("P");
+                var node = document.createTextNode("Line added.");
+                child.appendChild(node);
+                document.body.appendChild(child);
+            }
+        </script>
+    </body>
 </html>
