@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,10 +6,71 @@
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
 	</head>
 	<body>
-  <h1>HTML5 Tags - Video, Audio, and Canvas</h1>
-		
-	<script>
-	
-	</script>
-	</body>
+        <h1>HTML5 Tags - Video, Audio, and Canvas</h1>
+        <h>Canvas demo here.</h></br></br>
+        <canvas id="myCanvas" height="450" width="450"></canvas>
+        
+    <script>
+        var mainCanvas = document.getElementById("myCanvas"); //Example taken from Kirupa.com
+        var mainContext = mainCanvas.getContext('2d');
+
+        var canvasWidth = mainCanvas.width;
+        var canvasHeight = mainCanvas.height;
+
+        var angle = 0;
+
+        var requestAnimationFrame = window.requestAnimationFrame || 
+                    window.mozRequestAnimationFrame || 
+                    window.webkitRequestAnimationFrame || 
+                    window.msRequestAnimationFrame;
+
+        function drawCircle() {
+            mainContext.clearRect(0, 0, canvasWidth, canvasHeight);
+
+            // color in the background
+            mainContext.fillStyle = "#EEEEEE";
+            mainContext.fillRect(0, 0, canvasWidth, canvasHeight);
+
+            // draw the circle
+            mainContext.beginPath();
+
+            var radius = 25 + 150 * Math.abs(Math.cos(angle));
+            mainContext.arc(225, 225, radius, 0, Math.PI * 2, false);
+            mainContext.closePath();
+
+            // color in the circle
+            mainContext.fillStyle = "#004696";
+            mainContext.fill();
+
+            angle += Math.PI / 64;
+
+            requestAnimationFrame(drawCircle);
+        }
+        drawCircle();
+    </script><br><br>
+        
+        <h>Video Demo</h><br>
+        <video width="450" controls>
+            <source src="small.mp4" type="video/mp4">
+        </video><br><br>
+        
+        <h>Simple Canvas</h><br>
+        <p>Click inside to create a circle on the canvas.</p>
+        
+        <div id="canvas">
+            <canvas id="clickCanvas"></canvas>
+        </div>
+        <script>
+            document.getElementById("clickCanvas").addEventListener("click", click);
+            
+            function click() {   
+                var c = document.getElementById("clickCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(95,50,40,0,2*Math.PI);
+                ctx.stroke();
+            }
+        </script>
+        
+    </body>
 </html>
