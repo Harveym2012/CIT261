@@ -6,11 +6,16 @@
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
 	</head>
-	<body>
-  <h1>JavaScript Events Especially for Mobile Devices (onTouchBegin) and Animation and Transition Events</h1>
-		
-	<script>
-	
-	</script>
-	</body>
+<body>
+    <h1>Topic 9, JavaScript Events Especially for Mobile Devices (onTouchBegin) and Animation and Transition Events</h1>
+
+<div class="container">Touch this line to get an alert! (Requires mobile emulator)</div>
+    
+    <script>
+        var container = document.querySelector('.container');
+        container.addEventListener('touchstart',function(e){
+            alert('Congrats! Touch Successful!');
+        },false);
+    </script>
+</body>
 </html>
