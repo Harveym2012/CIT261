@@ -4,21 +4,156 @@
 		<title>Tax Bracket Calculator</title>
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/main.css">
-	</head>
 	<body>
-		<h1>Tax Bracket Calculator</h1>
+		<div class="header">Tax Bracket Calculator</div>
     <p> Please select your current status by entering the designated number.</p>
     <p> [0] = single, [1] = Head of Household, [2] = Married filing jointly, [3] = Married Filing Seperately. </p>
-	<p>Status Number: <input type="text" id="colorNumber"></p>
-	<p> Result: <p id="color"></p> <button onClick="Status()">Click Here.</button></p>
+	<p>Status Number: <input type="text" id="statusNumber"></p>
+	<p> Result: <p id="status"></p> <button onClick="Status()">Click Here.</button></p>
+    <br>
+    <p> Please input your yearly income.</p>
+    <p>Yearly Income: <input type="text" id="startValue"></p>
+    <p> Tax Bracket: <p id="bracket"></p> </p>
+    <p> Yearly Taxes Owed: <p id="endValue"></p> </p>
+    <button onClick="Calculate()">Calculate Bracket.</button>
 	<script>
 	
 		function Status(){
-			var choice = document.getElementById('colorNumber').value;
+			var choice = document.getElementById('statusNumber').value;
 			choice = (choice * 1);
-			var colors = ["Single", "Head of Household", "Married Filing Jointly", "Married Filing Seperately"]
-			document.getElementById("color").innerHTML = colors[choice];
+			var statuses = ["Single", "Head of Household", "Married Filing Jointly", "Married Filing Seperately"]
+			document.getElementById("status").innerHTML = statuses[choice];
 		}
+        
+        function Calculate(){
+            var start = document.getElementById('startValue').value;
+            var category = document.getElementById('statusNumber').value;
+            
+            if (category == 0){
+                if (start <= 9325){
+                    document.getElementById("bracket").innerHTML = '10%';
+                    document.getElementById("endValue").innerHTML = (start * 0.1);
+                }
+                if (start > 9325 && start <= 37950){
+                    document.getElementById("bracket").innerHTML = '15%';
+                    document.getElementById("endValue").innerHTML = (start * 0.15);
+                }
+                if (start > 37950 && start <= 91900){
+                    document.getElementById("bracket").innerHTML = '25%';
+                    document.getElementById("endValue").innerHTML = (start * 0.25);
+                }
+                if (start > 91900 && start <= 191650){
+                    document.getElementById("bracket").innerHTML = '28%';
+                    document.getElementById("endValue").innerHTML = (start * 0.28);
+                }
+                if (start > 191650 && start <= 416700){
+                    document.getElementById("bracket").innerHTML = '33%';
+                    document.getElementById("endValue").innerHTML = (start * 0.33);
+                }
+                if (start > 416700 && start <= 418400){
+                    document.getElementById("bracket").innerHTML = '35%';
+                    document.getElementById("endValue").innerHTML = (start * 0.35);
+                }
+                if (start > 418400){
+                    document.getElementById("bracket").innerHTML = '39.6%';
+                    document.getElementById("endValue").innerHTML = (start * 0.396);
+                }
+            }
+            
+            if (category == 1){
+                if (start <= 13350){
+                    document.getElementById("bracket").innerHTML = '10%';
+                    document.getElementById("endValue").innerHTML = (start * 0.1);
+                }
+                if (start > 13350 && start <= 50800){
+                    document.getElementById("bracket").innerHTML = '15%';
+                    document.getElementById("endValue").innerHTML = (start * 0.15);
+                }
+                if (start > 50800 && start <= 131200){
+                    document.getElementById("bracket").innerHTML = '25%';
+                    document.getElementById("endValue").innerHTML = (start * 0.25);
+                }
+                if (start > 131200 && start <= 212500){
+                    document.getElementById("bracket").innerHTML = '28%';
+                    document.getElementById("endValue").innerHTML = (start * 0.28);
+                }
+                if (start > 212500 && start <= 416700){
+                    document.getElementById("bracket").innerHTML = '33%';
+                    document.getElementById("endValue").innerHTML = (start * 0.33);
+                }
+                if (start > 416700 && start <= 444550){
+                    document.getElementById("bracket").innerHTML = '35%';
+                    document.getElementById("endValue").innerHTML = (start * 0.35);
+                }
+                if (start > 444550){
+                    document.getElementById("bracket").innerHTML = '39.6%';
+                    document.getElementById("endValue").innerHTML = (start * 0.396);
+                }
+            }
+            
+            if (category == 2){
+                if (start <= 18650){
+                    document.getElementById("bracket").innerHTML = '10%';
+                    document.getElementById("endValue").innerHTML = (start * 0.1);
+                }
+                if (start > 18650 && start <= 75900){
+                    document.getElementById("bracket").innerHTML = '15%';
+                    document.getElementById("endValue").innerHTML = (start * 0.15);
+                }
+                if (start > 75900 && start <= 153100){
+                    document.getElementById("bracket").innerHTML = '25%';
+                    document.getElementById("endValue").innerHTML = (start * 0.25);
+                }
+                if (start > 153100 && start <= 233350){
+                    document.getElementById("bracket").innerHTML = '28%';
+                    document.getElementById("endValue").innerHTML = (start * 0.28);
+                }
+                if (start > 233350 && start <= 416700){
+                    document.getElementById("bracket").innerHTML = '33%';
+                    document.getElementById("endValue").innerHTML = (start * 0.33);
+                }
+                if (start > 416700 && start <= 470700){
+                    document.getElementById("bracket").innerHTML = '35%';
+                    document.getElementById("endValue").innerHTML = (start * 0.35);
+                }
+                if (start > 470700){
+                    document.getElementById("bracket").innerHTML = '39.6%';
+                    document.getElementById("endValue").innerHTML = (start * 0.396);
+                }
+            }
+            
+            if (category == 3){
+                if (start <= 9325){
+                    document.getElementById("bracket").innerHTML = '10%';
+                    document.getElementById("endValue").innerHTML = (start * 0.1);
+                }
+                if (start > 9325 && start <= 37950){
+                    document.getElementById("bracket").innerHTML = '15%';
+                    document.getElementById("endValue").innerHTML = (start * 0.15);
+                }
+                if (start > 37950 && start <= 76550){
+                    document.getElementById("bracket").innerHTML = '25%';
+                    document.getElementById("endValue").innerHTML = (start * 0.25);
+                }
+                if (start > 76550 && start <= 116675){
+                    document.getElementById("bracket").innerHTML = '28%';
+                    document.getElementById("endValue").innerHTML = (start * 0.28);
+                }
+                if (start > 116675 && start <= 208350){
+                    document.getElementById("bracket").innerHTML = '33%';
+                    document.getElementById("endValue").innerHTML = (start * 0.33);
+                }
+                if (start > 208350 && start <= 235350){
+                    document.getElementById("bracket").innerHTML = '35%';
+                    document.getElementById("endValue").innerHTML = (start * 0.35);
+                }
+                if (start > 235350){
+                    document.getElementById("bracket").innerHTML = '39.6%';
+                    document.getElementById("endValue").innerHTML = (start * 0.396);
+                }
+            }
+            
+        }
 	</script>
 	</body>
 </html>
