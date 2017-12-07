@@ -2,10 +2,46 @@
 <html>
 	<head>
 		<title>Tax Bracket Calculator</title>
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<style>
+            .header{
+                color: white;
+                font-size: 18px;
+                background-color: steelblue;
+                border-bottom-style: solid;
+                border-bottom-color: black;
+                transform: skewX(-15deg);
+            }
+            body{
+                color: white;
+                background-color: steelblue;
+            }
+            p {
+            font-size: 100%;
+            transition: font-size 1s;
+            margin: 0;
+            padding: 0;
+            line-height: 30px;
+            }
+            p:hover {
+                font-size: 140%;
+            }
+            #myProgress {
+              width: 100%;
+              background-color: #ddd;
+            }
+
+            #myBar {
+              width: 0%;
+              height: 30px;
+              background-color: #4CAF50;
+              text-align: center;
+              line-height: 30px;
+              color: white;
+            }
+        </style>
+    </head>
 	<body>
-		<div class="header">Tax Bracket Calculator</div>
+    <div class="header">Tax Bracket Calculator</div>
     <p> Please select your current status by entering the designated number.</p>
     <p> [0] = single, [1] = Head of Household, [2] = Married filing jointly, [3] = Married Filing Seperately. </p>
 	<p>Status Number: <input type="text" id="statusNumber"></p>
@@ -15,7 +51,10 @@
     <p>Yearly Income: <input type="text" id="startValue"></p>
     <p> Tax Bracket: <p id="bracket"></p> </p>
     <p> Yearly Taxes Owed: <p id="endValue"></p> </p>
-    <button onClick="Calculate()">Calculate Bracket.</button>
+    <button onClick="Calculate()">Calculate Bracket.</button> <br><br>
+    <div id="myProgress">
+    <div id="myBar">0%</div>
+    </div>
 	<script>
 	
 		function Status(){
@@ -152,7 +191,21 @@
                     document.getElementById("endValue").innerHTML = (start * 0.396);
                 }
             }
-            
+            var elem = document.getElementById("myBar"); 
+            var width = 1;
+            var end = document.getElementById("endValue").innerHTML;
+            var total = ((end/start)*100);
+            var text = total + '%';
+            document.getElementById("myBar").innerHTML = text;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (width >= total) {
+                    clearInterval(id);
+                } else {
+                    width++; 
+                    elem.style.width = width + '%'; 
+                }
+            }
         }
 	</script>
 	</body>
